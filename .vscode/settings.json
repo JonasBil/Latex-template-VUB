@@ -34,5 +34,10 @@
         "*.synctex.gz",
         "*.toc"
     ],
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
+    
+    
+    // Zotero LaTeX extension: Set the default citation command to \cite 
+    "zotero.latexCommand": "cite",
+    "latex-utilities.zotero.latexCommand": "cite"
 }
