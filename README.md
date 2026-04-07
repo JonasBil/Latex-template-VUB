@@ -35,7 +35,10 @@ So before you start, make sure you have the following installed:
 
 ### Installing This Template
 
-#### Option 1: Clone it from the repository (Recommended)
+#### Option 1: Use GitHub Template (Best Choice)
+If you have a GitHub account, simply click the green **[Use this template](https://github.com/JonasBil/Latex-template-VUB/generate)** button at the top right of the repository page. This will create a fresh repository under your own account with all the starter files, without bringing over my commit history. After that, you can clone your new repository to your local machine using Git or open it directly in VS Code with the GitHub extension.
+
+#### Option 2: Clone from the repository
 For this you have to have [Git](https://git-scm.com/install/) installed. This can be done in the VS Code's terminal itself or any terminal of your choice:
 ```bash
 # Clone this repository in a new folder called "my-project"
@@ -49,8 +52,7 @@ Change `my-project` to whatever you want to name your project folder, if you wan
 git clone https://github.com/JonasBil/Latex-template-VUB.git .
 ```
 
-
-#### Option 2: Manual Download (If you don't want to use Git)
+#### Option 3: Manual Download (If you don't want to use Git)
 
 You can also download the repository as a ZIP file form the [GitHub Page](https://github.com/JonasBil/Latex-template-VUB) (click on the green **Code** button and select **Download ZIP**), then extract the contents to your desired location and compile `main.tex` using the run button in vs code, or compile manually (see instructions below).
 
