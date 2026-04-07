@@ -57,14 +57,14 @@ git clone https://github.com/JonasBil/Latex-template-VUB.git .
 You can also download the repository as a ZIP file form the [GitHub Page](https://github.com/JonasBil/Latex-template-VUB) (click on the green **Code** button and select **Download ZIP**), then extract the contents to your desired location and compile `main.tex` using the run button in vs code, or compile manually (see instructions below).
 
 
-#### Option 3: Using Overleaf
+#### Option 4: Using Overleaf
 
 1. Click the green **Code** button at the top of this [GitHub repository](https://github.com/JonasBil/Latex-template-VUB) and select **Download ZIP**.
 2. Go to [Overleaf](https://www.overleaf.com/) and click **New Project** $\rightarrow$ **Upload Project**.
 3. Select the `.zip` file you downloaded.
 4. Overleaf will automatically detect `main.tex` and compile your document. Both `pdfLaTeX` and `XeLaTeX` compilers will work correctly.
 
-#### Option 4: Other LaTeX Editors (e.g., Texifier, TeXstudio, TeXShop)
+#### Option 5: Other LaTeX Editors (e.g., Texifier, TeXstudio, TeXShop)
 I haven't tested this very well, but it should work fine as long as you set the main file to `main.tex` and ensure that your build sequence includes a BibTeX backend for the bibliography. The exact steps may vary depending on your editor, but generally:
 
 1. Clone or download the repository to your local machine.
