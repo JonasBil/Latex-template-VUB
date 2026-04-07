@@ -9,51 +9,16 @@ I also wrote this README to help you get started and to explain how to use the t
 ---
 
 ## Table of Contents
-- [VUB LaTeX Template](#vub-latex-template)
-  - [Table of Contents](#table-of-contents)
-  - [Quick Start](#quick-start)
-    - [Prerequisites](#prerequisites)
-    - [Installing This Template](#installing-this-template)
-      - [Option 1: Clone it from the repository (Recommended)](#option-1-clone-it-from-the-repository-recommended)
-      - [Option 2: Manual Download (If you don't want to use Git)](#option-2-manual-download-if-you-dont-want-to-use-git)
-      - [Option 3: Using Overleaf](#option-3-using-overleaf)
-      - [Option 4: Other LaTeX Editors (e.g., Texifier, TeXstudio, TeXShop)](#option-4-other-latex-editors-eg-texifier-texstudio-texshop)
-  - [Recommended VS Code Extensions](#recommended-vs-code-extensions)
-  - [Writing \& Building Your Document](#writing--building-your-document)
-    - [1. Update Document Information](#1-update-document-information)
-    - [2. Edit Section Files](#2-edit-section-files)
-    - [3. Add References](#3-add-references)
-      - [Manual BibTeX Entry](#manual-bibtex-entry)
-      - [Automating Your Bibliography with Zotero + Better BibTeX](#automating-your-bibliography-with-zotero--better-bibtex)
-        - [**1. Install Zotero and Better BibTeX**](#1-install-zotero-and-better-bibtex)
-        - [**2. Collect References**](#2-collect-references)
-        - [**3. Set Up Auto-Export to Your `.bib` File**](#3-set-up-auto-export-to-your-bib-file)
-    - [4. Cite in Your Document](#4-cite-in-your-document)
-      - [The lateX Workshop Citation Browser](#the-latex-workshop-citation-browser)
-      - [The Zotero LaTeX Extension Citation Browser](#the-zotero-latex-extension-citation-browser)
-    - [5. Building Your Document](#5-building-your-document)
-      - [VS Code (Recommended)](#vs-code-recommended)
-      - [Using the Command Line](#using-the-command-line)
-  - [Tips \& Tricks](#tips--tricks)
-  - [VUB Styling](#vub-styling)
-    - [Colors](#colors)
-    - [Fonts](#fonts)
-    - [Logo and Triangle](#logo-and-triangle)
-  - [LaTeX Quick Reference](#latex-quick-reference)
-    - [Document Structure](#document-structure)
-    - [Figures](#figures)
-    - [Tables](#tables)
-    - [Math](#math)
-    - [Lists](#lists)
-    - [Citations](#citations)
-  - [Troubleshooting](#troubleshooting)
-    - [Common Issues](#common-issues)
-  - [Additional Resources](#additional-resources)
-    - [LaTeX Tutorials](#latex-tutorials)
-    - [Bibliography Management](#bibliography-management)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
-
+- [Quick Start](#quick-start)
+- [Recommended VS Code Extensions](#recommended-vs-code-extensions)
+- [Writing & Building Your Document](#writing--building-your-document)
+- [Tips & Tricks](#tips--tricks)
+- [VUB Styling](#vub-styling)
+- [LaTeX Quick Reference](#latex-quick-reference)
+- [Troubleshooting](#troubleshooting)
+- [Additional Resources](#additional-resources)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 ---
 
 ## Quick Start
@@ -463,11 +428,6 @@ The equation $E = mc^2$ is famous.
 - [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
 - [The Not So Short Introduction to LaTeX](https://tobi.oetiker.ch/lshort/lshort.pdf)
 
-### Bibliography Management
-- [Google Scholar](https://scholar.google.com/) - Export BibTeX citations
-- [JabRef](https://www.jabref.org/) - Reference management software
-- [Zotero](https://www.zotero.org/) - Bibliography manager (see Zotero guide above)
-
 ---
 
 ## License
@@ -475,11 +435,13 @@ The equation $E = mc^2$ is famous.
 This template is licensed under the [MIT License](LICENSE).
 
 The VUB styling files (under `styles/`) are by [Ruben De Smet](https://gitlab.com/rubdos/texlive-vub) and licensed under the [LaTeX Project Public License (LPPL)](http://www.latex-project.org/lppl.txt), version 1.3 or later.
+The VUB logo is not covered by this license; you must obtain your own license for it.
 
 
 ## Acknowledgments
 
 - [Ruben De Smet](https://gitlab.com/rubdos/texlive-vub) for creating and maintaining the VUB LaTeX style package (`texlive-vub`), which this template is based on.
+- 
 
 ---
 
