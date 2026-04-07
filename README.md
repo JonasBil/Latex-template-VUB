@@ -1,109 +1,89 @@
 # VUB LaTeX Template
 
-A LaTeX template for academic reports using the VUB (Vrije Universiteit Brussel) official style with modular section files.
+This is a LaTeX template for academic reports using the VUB (Vrije Universiteit Brussel) style. I adapted the template from [Ruben De Smet](https://gitlab.com/rubdos/texlive-vub) and modified it to better fit my needs, to work better in VS Code, modular section files and automatic bibliography management. I tried to keep it as simple as possible and it can still be used with other LaTeX editors or Overleaf without any issues.
+I also wrote this README to help you get started and to explain how to use the template. If you have any questions or suggestions for improvement, you can tell me or just create an issue or pull request on the GitHub page.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-- **VUB Official Branding**: VUB logo, colors, and fonts (TeX Gyre Adventor)
-- **Modular Structure**: Separate section files for easy organization
-- **VS Code Integration**: One-click compilation with green run button
-- **Build Automation**: Organized build artifacts in dedicated folder
-- **Ready to Use**: Just clone and start writing!
-
-## Project Structure
-
-```
-latex-exercise3/
-├── main.tex                    # Main LaTeX document
-├── vub_logo_cmyk.pdf          # VUB official logo
-├── README.md                  # This file
-├── LICENSE                    # MIT License
-├── .vscode/
-│   └── settings.json          # VS Code LaTeX Workshop configuration
-├── bib/
-│   └── main.bib               # BibTeX bibliography file
-├── styles/
-│   └── vubprivate.sty         # VUB custom styling (colors, fonts, triangle)
-├── sections/
-│   ├── 01-introduction.tex    # Introduction section
-│   ├── 02-methods.tex         # Methods section
-│   ├── 03-results.tex         # Results section
-│   ├── 04-discussion.tex      # Discussion section
-│   └── 05-conclusion.tex      # Conclusion section
-└── build/                     # Build artifacts (auto-generated, git-ignored)
-    ├── main.aux               # Auxiliary file
-    ├── main.bbl               # Bibliography output
-    ├── main.blg               # Bibliography log
-    ├── main.fdb_latexmk       # Latexmk database
-    ├── main.fls               # File list
-    ├── main.log               # Compilation log
-    ├── main.pdf               # Final PDF output
-    ├── main.synctex.gz        # SyncTeX for editor sync
-    └── main.toc               # Table of contents
-```
-
----
 
 ## Quick Start
 
 ### Prerequisites
+Before you can start writing, you have to make sure you have the necessary tools and packages installed. I recommend using a VS code based editor (such as [VS Code](https://code.visualstudio.com/), [VSconium](https://vscodium.com/)...), but you can also use other LaTeX editors or Overleaf. The main reasons why I recommend VS Code based editors are that there exists many useful extensions for Latex and it is very customizable. It also integrates well with Git for version control, you can easily manage your bibliography using Zotero and it also integrates AI quit well which can be really handy for formatting or debugging your LaTeX code (if you use this, make sure you acknowledge this in your paper). I also included a settings.json file so that is should work in vs code as intended without to much hassle. For this guide I will focus on the VS Code setup, but I will also provide instructions for other editors (such as TeXstudio) and Overleaf.
 
+So before you start, make sure you have the following installed:
 - **LaTeX Distribution**: [MiKTeX](https://miktex.org/) (Windows) or [TeX Live](https://www.tug.org/texlive/) (Linux/Mac)
-- **Perl**: Required by latexmk - [Strawberry Perl](http://strawberryperl.com/) (Windows)
-- **VS Code** (recommended): With [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension
+- **LaTeX Packages**: Ensure the following essential packages are installed in your TeX distribution (most are included by default in full installations): `geometry`, `color`, `tikz`, `adjustbox`, `kvoptions`, `ifxetex`, `ifluatex`, `fontspec` (for XeLaTeX/LuaLaTeX), and `tex-gyre` (for the TeX Gyre Adventor font).
+- **Perl**: Required by latexmk. [Strawberry Perl](http://strawberryperl.com/) (Windows). On macOS and Linux, Perl is normally pre-installed (if not, install via your package manager, e.g., `sudo apt install perl` or `brew install perl`).
+- **VS Code based editor** (you can also use other LaTeX editors): With [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension, below I added a list of other recommended extensions to enhance your LaTeX writing experience in VS Code.
+- **Fonts**: The template uses TeX Gyre Adventor, the official VUB font. It should be included in your TeX distribution, but if you want to install it manually, you can download it from [TeX Gyre](http://www.gust.org.pl/projects/e-foundry/tex-gyre/adventor) and install it on your system.
 
-### Using This Template
+### Installing This Template
 
-#### Option 1: Clone and Start Writing (Recommended)
-
+#### Option 1: Clone it from the repository (Recommended)
+For this you have to have [Git](https://git-scm.com/install/) installed. This can be done in the VS Code's terminal itself or any terminal of your choice:
 ```bash
-# Clone this repository
+# Clone this repository in a new folder called "my-project"
 git clone https://github.com/JonasBil/Latex-template-VUB.git my-project
 cd my-project
 
-# Open in VS Code
-code .
-
-# Edit main.tex and section files, then press Ctrl+Alt+B to compile
 ```
-
-#### Option 2: Manual Compilation
-
+Change `my-project` to whatever you want to name your project folder, if you want it in the folder itself you can change it to `.` so then you get:
 ```bash
-cd my-project
-latexmk -pdf -interaction=nonstopmode -outdir=build main.tex
+# Clone this repository into the current folder
+git clone https://github.com/JonasBil/Latex-template-VUB.git .
 ```
 
-The compiled PDF will be in `build/main.pdf`.
 
----
+#### Option 2: Manual Download (If you don't want to use Git)
+
+You can also download the repository as a ZIP file form the [GitHub Page](https://github.com/JonasBil/Latex-template-VUB) (click on the green **Code** button and select **Download ZIP**), then extract the contents to your desired location and compile `main.tex` using the run button in vs code, or compile manually (see instructions below).
+
+
+#### Option 3: Using Overleaf
+
+1. Click the green **Code** button at the top of this [GitHub repository](https://github.com/JonasBil/Latex-template-VUB) and select **Download ZIP**.
+2. Go to [Overleaf](https://www.overleaf.com/) and click **New Project** $\rightarrow$ **Upload Project**.
+3. Select the `.zip` file you downloaded.
+4. Overleaf will automatically detect `main.tex` and compile your document. Both `pdfLaTeX` and `XeLaTeX` compilers will work correctly.
+
+#### Option 4: Other LaTeX Editors (e.g., Texifier, TeXstudio, TeXShop)
+I haven't tested this very well, but it should work fine as long as you set the main file to `main.tex` and ensure that your build sequence includes a BibTeX backend for the bibliography. The exact steps may vary depending on your editor, but generally:
+
+1. Clone or download the repository to your local machine.
+2. Open `main.tex` in your preferred editor.
+3. Depending on your editor:
+   - **Texifier / TeXstudio**: They will usually auto-detect your `main.tex` and let you build right away. Just make sure the build sequence runs a BibTeX backend (like Biber or standard BibTeX) along with `pdflatex` or `xelatex`.
+   - **Build Configurations**: you can map the editor's build sequence to use the equivalent of `latexmk -pdf` to ensure both cross-references and bibliographies compile successfully.
+
+
 
 ## Recommended VS Code Extensions
 
-The following extensions are recommended for a smooth LaTeX workflow in VS Code (you can create a new VS-code profile with these plugins to keep everything clean and organized):
+The following extensions are recommended for a smooth LaTeX workflow in VS Code (In VS code you can create a new [**VS-code profile**](https://code.visualstudio.com/docs/editor/profiles) with these plugins, i really recommend doing this so you can easily switch between your LaTeX writing environment and your normal coding environment and this keeps everything organized):
 
-- **[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)** — The core extension for LaTeX in VS Code. Provides one-click PDF compilation (`Ctrl+Alt+B`), real-time error highlighting, SyncTeX support (click in the PDF to jump to the source and vice versa), auto-completion for `\cite{}`, `\ref{}`, and LaTeX commands, and a built-in PDF viewer. This template's `.vscode/settings.json` is pre-configured for it.
+- **[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)** — The core extension for LaTeX in VS Code. Provides one-click PDF compilation (using the **green run** button or `Ctrl+Alt+B`), real-time error highlighting, SyncTeX support (click in the PDF to jump to the source and vice versa), auto-completion for `\cite{}`, `\ref{}`, and LaTeX commands, and a built-in PDF viewer. This template's `.vscode/settings.json` is pre-configured for it and should not be deleted!.
 - **[LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)** — Grammar and spell checking powered by LanguageTool. Works directly in `.tex` files and understands LaTeX syntax, so it won't flag commands as spelling errors. Supports multiple languages.
-- **[LaTeX Utilities](https://marketplace.visualstudio.com/items?itemName=tecosaur.latex-utilities)** — Adds quality-of-life features on top of LaTeX Workshop: live snippet previews, magic comments, and formatted paste (e.g., pasting a table from Excel auto-generates a `tabular` environment).
+- **[LaTeX Utilities](https://marketplace.visualstudio.com/items?itemName=tecosaur.latex-utilities)** — Adds quality-of-life features on top of LaTeX Workshop: live snippet previews (if you hover over f.e a image or equation snippet, you will see a preview), magic comments, and formatted paste (e.g., pasting a table from Excel auto-generates a `tabular` environment).
 - **[Zotero LaTeX](https://marketplace.visualstudio.com/items?itemName=bnavetta.zoterolatex)** — Enables cite-as-you-write by searching your Zotero library directly from VS Code and inserting `\cite{}` keys.
 
-To install all at once, run in a terminal:
+To install these extensions all at once, run in a terminal:
 ```bash
 code --install-extension James-Yu.latex-workshop
 code --install-extension valentjn.vscode-ltex
 code --install-extension tecosaur.latex-utilities
 code --install-extension bnavetta.zoterolatex
 ```
+Or you can search for them in the VS Code Extensions Marketplace and install them with a click.
 
----
 
-## Writing Your Document
+## Writing & Building Your Document
+When everything is installed and set up, you can start writing your document by editing the `main.tex` file and the **section files** in the `sections/` folder. The template is structured to keep your content organized and modular, so you can focus on writing without worrying about formatting. The `main.tex` file serves as the **main entry point** and includes the preamble, title page setup, and the structure of your document. The **actual content** of each section is stored in separate `.tex` files within the `sections/` folder, which are included in `main.tex` using `\input{}` commands. If you want to add more sections, simply create a new `.tex` file in the `sections/` folder and include it in `main.tex` as the other sections. When compiling (or building) the document, the **resulting pdf** is generated together with the other output files in a `build/` folder (**this is created the first time you build the document**). Below is a step-by-step guide to get you started:
 
 ### 1. Update Document Information
 
-Edit the preamble in `main.tex`:
+Edit the preamble, title and author information in `main.tex`:
 
 ```latex
 %! Author = Your Name
@@ -118,6 +98,20 @@ Also update the footer:
 ```latex
 \fancyfoot[LO, RE]{Your Name}  % Change to your name
 ```
+
+**Changing the Title Page (Custom Commands)**
+If you want to customize the title page further, the `vub` style packages (`vub.sty` and `vubprivate.sty`) provide several custom commands to format your document. You can use these commands in the  `main.tex` to set additional information or customize the appearance of the title page. Here are some of the key commands you can use:
+
+Title Page Commands (use in main.tex):
+- `\faculty{Name}`: Set your faculty name (e.g., `\faculty{Engineering Sciences}`).
+- `\subtitle{Text}`: Add a subtitle below the main document title.
+- `\pretitle{Text}`: Add text above the main document title.
+- `\promotors{Name(s)}`: List the promotor(s) or supervisors for the document.
+
+Typography and Graphics Commands:
+- `\vubfont{Text}`: Typeset text in the official VUB font (TeX Gyre Adventor).
+- `\vubfontbf{Text}`: Typeset text in the bold official VUB font.
+- `\vubtriangle`: Manually insert the official orange VUB triangle (it is already automatically included on `\maketitle`).
 
 ### 2. Edit Section Files
 
@@ -135,10 +129,11 @@ These files are automatically included in `main.tex` via:
 \input{sections/02-methods}
 % ... etc
 ```
+If you want to add more sections, simply create a new `.tex` file in the `sections/` folder and include it in `main.tex` as shown above.
 
 ### 3. Add References
 
-Add your references to `bib/main.bib`:
+To manage your bibliography, you can use the `bib/main.bib` file. This is a **BibTeX file** where you can add all your references in the standard BibTeX format. Each entry should have a unique citation key that you will use to cite it in your document. Below, I explain **how to automate this process using Zotero** and the **Better BibTeX plugin** (so when you add a reference to zotero this is automatically updated in the `bib/main.bib` file and can be used directly in your LaTeX document), but here is an example of how to add a reference manually:
 
 ```bibtex
 @article{author2025,
@@ -159,13 +154,14 @@ Or: \citeA{author2025} demonstrated that...
 
 ### 4. Automating Your Bibliography with Zotero + Better BibTeX
 
-[Zotero](https://www.zotero.org/) can automatically manage your `.bib` file so you never have to write BibTeX entries by hand.
+[Zotero](https://www.zotero.org/) can automatically manage your `.bib` file so you never have to write BibTeX entries by hand, the same method can also be applied when you're using another Latex editor, just make sure to set the export path to your `bib/main.bib` file and enable auto-export. Below are the steps to set this up:
 
 #### Install Zotero and Better BibTeX
 
-1. Download and install [Zotero](https://www.zotero.org/download/) (free, open-source).
-2. Install the [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/installation/) plugin — this adds robust BibTeX/BibLaTeX export and stable citation keys.
-3. Restart Zotero after installing the plugin.
+1. Download and install [Zotero](https://www.zotero.org/download/).
+2. Install the [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/installation/) plugin — this adds automatic BibTeX/BibLaTeX export and automatic generation of citation keys.
+3. Go to Zotero's **Tools → Plugins**, click on the settings icon and **Install from file**, select the downloaded plugin file.
+4. Restart Zotero after installing the plugin and make sure the plugin is enabled.
 
 #### Collect References
 
@@ -180,7 +176,7 @@ Add references to your Zotero library using any of these methods:
 2. Go to **File → Export Library...** (or right-click a collection → **Export Collection...**).
 3. Choose **Better BibTeX** as the format.
 4. Check **Keep updated** — this enables auto-export so any new references you add are automatically written to the file.
-5. Save to `bib/main.bib` in your project folder.
+5. Save to `bib/main.bib` in your **LaTeX project folder**.
 
 Now, every time you add or edit a reference in Zotero, it will automatically update `bib/main.bib`. No manual copying needed.
 
@@ -192,19 +188,18 @@ Use the citation key generated by Better BibTeX (visible in Zotero's "Citation K
 As demonstrated by \cite{desmet2020}...
 ```
 
-With the Zotero LaTeX VS Code extension installed, you can also press `Ctrl+Shift+Z` to search your Zotero library and insert a citation key directly.
+With the Zotero LaTeX VS Code extension installed, you can also press `Alt+Z` to search your Zotero library and insert a citation key directly (**This seems to be broken, i will look at it soon!**).
 
----
 
-## Building Your Document
+### 5. Building Your Document
+When you are ready to compile your document and generate the PDF, you can do this directly in VS Code or via the command line.
 
-### VS Code (Recommended)
-
+#### VS Code (Recommended)
 1. Open `main.tex` in VS Code
 2. Press **`Ctrl+Alt+B`** or click the green **▶** button
 3. PDF opens automatically in VS Code
 
-### Command Line
+#### Using the Command Line
 
 ```bash
 # Full build with bibliography
@@ -217,7 +212,6 @@ latexmk -C -outdir=build
 latexmk -pdf -pvc -interaction=nonstopmode -outdir=build main.tex
 ```
 
----
 
 ## VUB Styling
 
@@ -225,7 +219,7 @@ This template includes VUB official branding, provided by the [`texlive-vub`](ht
 
 The VUB LaTeX style files (`vub.sty`, `vubprivate.sty`, etc.) are licensed under the [LaTeX Project Public License (LPPL)](http://www.latex-project.org/lppl.txt), version 1.3 or later. The VUB logo is not covered by this license; you must obtain your own license for it.
 
-If you have improvements to the `.sty` files, please consider contributing upstream via the [texlive-vub GitLab repository](https://gitlab.com/rubdos/texlive-vub).
+Following are some of the key features of the VUB styling included in this template:
 
 ### Colors
 
@@ -242,9 +236,9 @@ The template uses **TeX Gyre Adventor** (similar to Avenir), the official VUB fo
 
 The VUB logo and orange triangle are automatically added to the title page via `\maketitle`.
 
----
 
 ## LaTeX Quick Reference
+This is a quick reference for common LaTeX commands and environments that you can use in your document. For more detailed information, check out the [Additional Resources](#additional-resources) section below.
 
 ### Document Structure
 
@@ -324,7 +318,6 @@ The equation $E = mc^2$ is famous.
 \citeyear{key}              % Year only
 ```
 
----
 
 ## Troubleshooting
 
@@ -345,7 +338,6 @@ The equation $E = mc^2$ is famous.
 **Problem**: Fonts look wrong
 - **Solution**: Install TeX Gyre Adventor fonts or they'll fall back to Computer Modern
 
----
 
 ## Additional Resources
 
@@ -359,7 +351,7 @@ The equation $E = mc^2$ is famous.
 - [JabRef](https://www.jabref.org/) - Reference management software
 - [Zotero](https://www.zotero.org/) - Bibliography manager (see Zotero guide above)
 
----
+
 
 ## License
 
@@ -368,18 +360,9 @@ This template is licensed under the [MIT License](LICENSE).
 The VUB styling files (under `styles/`) are by [Ruben De Smet](https://gitlab.com/rubdos/texlive-vub) and licensed under the [LaTeX Project Public License (LPPL)](http://www.latex-project.org/lppl.txt), version 1.3 or later.
 
 
-## Author
-
-**Jonas Bil**
-- GitHub: [@JonasBil](https://github.com/JonasBil)
-
----
-
 ## Acknowledgments
 
-- [Ruben De Smet](https://gitlab.com/rubdos/texlive-vub) for creating and maintaining the VUB LaTeX style package (`texlive-vub`)
-- LaTeX Workshop team for the excellent VS Code extension
-- The LaTeX community for continuous support
+- [Ruben De Smet](https://gitlab.com/rubdos/texlive-vub) for creating and maintaining the VUB LaTeX style package (`texlive-vub`), which this template is based on.
 
 ---
 
