@@ -5,9 +5,11 @@
             "name": "latexmk",
             "command": "latexmk",
             "args": [
-                "-pdf",
+                "-synctex=1",
                 "-interaction=nonstopmode",
-                "-outdir=build",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
                 "%DOC%"
             ],
             "env": {

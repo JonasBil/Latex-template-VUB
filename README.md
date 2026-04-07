@@ -6,6 +6,55 @@ I also wrote this README to help you get started and to explain how to use the t
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
+---
+
+## Table of Contents
+- [VUB LaTeX Template](#vub-latex-template)
+  - [Table of Contents](#table-of-contents)
+  - [Quick Start](#quick-start)
+    - [Prerequisites](#prerequisites)
+    - [Installing This Template](#installing-this-template)
+      - [Option 1: Clone it from the repository (Recommended)](#option-1-clone-it-from-the-repository-recommended)
+      - [Option 2: Manual Download (If you don't want to use Git)](#option-2-manual-download-if-you-dont-want-to-use-git)
+      - [Option 3: Using Overleaf](#option-3-using-overleaf)
+      - [Option 4: Other LaTeX Editors (e.g., Texifier, TeXstudio, TeXShop)](#option-4-other-latex-editors-eg-texifier-texstudio-texshop)
+  - [Recommended VS Code Extensions](#recommended-vs-code-extensions)
+  - [Writing \& Building Your Document](#writing--building-your-document)
+    - [1. Update Document Information](#1-update-document-information)
+    - [2. Edit Section Files](#2-edit-section-files)
+    - [3. Add References](#3-add-references)
+      - [Manual BibTeX Entry](#manual-bibtex-entry)
+      - [Automating Your Bibliography with Zotero + Better BibTeX](#automating-your-bibliography-with-zotero--better-bibtex)
+        - [**1. Install Zotero and Better BibTeX**](#1-install-zotero-and-better-bibtex)
+        - [**2. Collect References**](#2-collect-references)
+        - [**3. Set Up Auto-Export to Your `.bib` File**](#3-set-up-auto-export-to-your-bib-file)
+    - [4. Cite in Your Document](#4-cite-in-your-document)
+      - [The lateX Workshop Citation Browser](#the-latex-workshop-citation-browser)
+      - [The Zotero LaTeX Extension Citation Browser](#the-zotero-latex-extension-citation-browser)
+    - [5. Building Your Document](#5-building-your-document)
+      - [VS Code (Recommended)](#vs-code-recommended)
+      - [Using the Command Line](#using-the-command-line)
+  - [Tips \& Tricks](#tips--tricks)
+  - [VUB Styling](#vub-styling)
+    - [Colors](#colors)
+    - [Fonts](#fonts)
+    - [Logo and Triangle](#logo-and-triangle)
+  - [LaTeX Quick Reference](#latex-quick-reference)
+    - [Document Structure](#document-structure)
+    - [Figures](#figures)
+    - [Tables](#tables)
+    - [Math](#math)
+    - [Lists](#lists)
+    - [Citations](#citations)
+  - [Troubleshooting](#troubleshooting)
+    - [Common Issues](#common-issues)
+  - [Additional Resources](#additional-resources)
+    - [LaTeX Tutorials](#latex-tutorials)
+    - [Bibliography Management](#bibliography-management)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
+
+---
 
 ## Quick Start
 
@@ -57,7 +106,7 @@ I haven't tested this very well, but it should work fine as long as you set the 
    - **Texifier / TeXstudio**: They will usually auto-detect your `main.tex` and let you build right away. Just make sure the build sequence runs a BibTeX backend (like Biber or standard BibTeX) along with `pdflatex` or `xelatex`.
    - **Build Configurations**: you can map the editor's build sequence to use the equivalent of `latexmk -pdf` to ensure both cross-references and bibliographies compile successfully.
 
-
+---
 
 ## Recommended VS Code Extensions
 
@@ -66,17 +115,17 @@ The following extensions are recommended for a smooth LaTeX workflow in VS Code 
 - **[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)** — The core extension for LaTeX in VS Code. Provides one-click PDF compilation (using the **green run** button or `Ctrl+Alt+B`), real-time error highlighting, SyncTeX support (click in the PDF to jump to the source and vice versa), auto-completion for `\cite{}`, `\ref{}`, and LaTeX commands, and a built-in PDF viewer. This template's `.vscode/settings.json` is pre-configured for it and should not be deleted!.
 - **[LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex)** — Grammar and spell checking powered by LanguageTool. Works directly in `.tex` files and understands LaTeX syntax, so it won't flag commands as spelling errors. Supports multiple languages.
 - **[LaTeX Utilities](https://marketplace.visualstudio.com/items?itemName=tecosaur.latex-utilities)** — Adds quality-of-life features on top of LaTeX Workshop: live snippet previews (if you hover over f.e a image or equation snippet, you will see a preview), magic comments, and formatted paste (e.g., pasting a table from Excel auto-generates a `tabular` environment).
-- **[Zotero LaTeX](https://marketplace.visualstudio.com/items?itemName=bnavetta.zoterolatex)** — Enables cite-as-you-write by searching your Zotero library directly from VS Code and inserting `\cite{}` keys.
+- **[Zotero LaTeX](https://marketplace.visualstudio.com/items?itemName=bnavetta.zoterolatex)** — Enables cite-as-you-write by searching your Zotero library directly from VS Code and inserting `\cite{}` keys, this is also included in the LateX Utilities extension but if you don't want to install the ultities extension you can just install this one for the Zotero integration. 
 
-To install these extensions all at once, run in a terminal:
+To install these extensions you can search them in the VS Code Extensions Marketplace or run the following commands in the terminal:
 ```bash
 code --install-extension James-Yu.latex-workshop
 code --install-extension valentjn.vscode-ltex
 code --install-extension tecosaur.latex-utilities
 code --install-extension bnavetta.zoterolatex
 ```
-Or you can search for them in the VS Code Extensions Marketplace and install them with a click.
 
+---
 
 ## Writing & Building Your Document
 When everything is installed and set up, you can start writing your document by editing the `main.tex` file and the **section files** in the `sections/` folder. The template is structured to keep your content organized and modular, so you can focus on writing without worrying about formatting. The `main.tex` file serves as the **main entry point** and includes the preamble, title page setup, and the structure of your document. The **actual content** of each section is stored in separate `.tex` files within the `sections/` folder, which are included in `main.tex` using `\input{}` commands. If you want to add more sections, simply create a new `.tex` file in the `sections/` folder and include it in `main.tex` as the other sections. When compiling (or building) the document, the **resulting pdf** is generated together with the other output files in a `build/` folder (**this is created the first time you build the document**). Below is a step-by-step guide to get you started:
@@ -132,8 +181,10 @@ These files are automatically included in `main.tex` via:
 If you want to add more sections, simply create a new `.tex` file in the `sections/` folder and include it in `main.tex` as shown above.
 
 ### 3. Add References
+To manage your bibliography, you can use the `bib/main.bib` file. This is a **BibTeX file** where you can add all your references in the standard BibTeX format. Each entry should have a unique citation key that you will use to cite it in your document. You can do this manually by writing (or copying) the BibTeX entries yourself, or you can automate the process using a reference manager like Zotero, which can export your library directly to a `.bib` file and keep it updated automatically.
 
-To manage your bibliography, you can use the `bib/main.bib` file. This is a **BibTeX file** where you can add all your references in the standard BibTeX format. Each entry should have a unique citation key that you will use to cite it in your document. Below, I explain **how to automate this process using Zotero** and the **Better BibTeX plugin** (so when you add a reference to zotero this is automatically updated in the `bib/main.bib` file and can be used directly in your LaTeX document), but here is an example of how to add a reference manually:
+#### Manual BibTeX Entry
+Open `bib/main.bib` and add your references in the following format:
 
 ```bibtex
 @article{author2025,
@@ -146,31 +197,25 @@ To manage your bibliography, you can use the `bib/main.bib` file. This is a **Bi
 }
 ```
 
-Cite in your text:
-```latex
-As shown by \cite{author2025}...
-Or: \citeA{author2025} demonstrated that...
-```
-
-### 4. Automating Your Bibliography with Zotero + Better BibTeX
+#### Automating Your Bibliography with Zotero + Better BibTeX
 
 [Zotero](https://www.zotero.org/) can automatically manage your `.bib` file so you never have to write BibTeX entries by hand, the same method can also be applied when you're using another Latex editor, just make sure to set the export path to your `bib/main.bib` file and enable auto-export. Below are the steps to set this up:
 
-#### Install Zotero and Better BibTeX
+##### **1. Install Zotero and Better BibTeX**
 
 1. Download and install [Zotero](https://www.zotero.org/download/).
 2. Install the [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/installation/) plugin — this adds automatic BibTeX/BibLaTeX export and automatic generation of citation keys.
 3. Go to Zotero's **Tools → Plugins**, click on the settings icon and **Install from file**, select the downloaded plugin file.
 4. Restart Zotero after installing the plugin and make sure the plugin is enabled.
 
-#### Collect References
+##### **2. Collect References**
 
 Add references to your Zotero library using any of these methods:
 - **Browser Connector**: Install the [Zotero Connector](https://www.zotero.org/download/) browser extension, then click the icon on any journal page, Google Scholar result, or arXiv page to save it instantly.
 - **DOI/ISBN**: In Zotero, click the magic wand icon and paste a DOI or ISBN — metadata is fetched automatically.
 - **Manual entry**: Add items by hand if needed.
 
-#### Set Up Auto-Export to Your `.bib` File
+##### **3. Set Up Auto-Export to Your `.bib` File**
 
 1. In Zotero, select the collection (folder) you want to export, or select your entire library.
 2. Go to **File → Export Library...** (or right-click a collection → **Export Collection...**).
@@ -180,15 +225,33 @@ Add references to your Zotero library using any of these methods:
 
 Now, every time you add or edit a reference in Zotero, it will automatically update `bib/main.bib`. No manual copying needed.
 
-#### Cite in Your Document
+### 4. Cite in Your Document
+There are multiple ways to cite your references in your LaTeX document, you can use the standard `\cite{}` command, or you can use the commands provided by the LaTeX Workshop extension, the utilities extension or the zotero extension for easier citation management.
 
-Use the citation key generated by Better BibTeX (visible in Zotero's "Citation Key" column):
+When you want to cite a reference, you have to use the citation key that corresponds to the reference you want to cite. If you are using Zotero with Better BibTeX, each reference will have a unique citation key that is automatically generated based on the author and year (or whatever pattern you set in Better BibTeX settings). You can find this citation key in the "Citation Key" column of your Zotero library. For example, if you have a reference with the citation key `desmet2020`, you can cite it in your LaTeX document like this:
 
 ```latex
 As demonstrated by \cite{desmet2020}...
 ```
+If you're typing in VS code, the LaTeX Workshop extension provides auto-completion for citation keys. When you type `\cite{`, a dropdown will appear showing all available citation keys from your `.bib` file, so you can easily select the one you want without having to remember the exact key. But you can also use a citation browser to search and insert a citation, their are 2 browsers you can use:
 
-With the Zotero LaTeX VS Code extension installed, you can also press `Alt+Z` to search your Zotero library and insert a citation key directly (**This seems to be broken, i will look at it soon!**).
+#### The lateX Workshop Citation Browser
+This is the citation browser thats included in the latex workshop extension, you can open it by pressing `Ctrl+Shift+P` and searching for "LaTeX Workshop: Open Citation Browser". This will open a search bar where you can type the name of the author, title, or any keyword from your references, and it will show you a list of matching citation keys from your `.bib` file. You can then select the one you want to  into your document. You can also bind a shortcut to this command for faster access, for example `Alt+I`:
+1. Open the Keyboard Shortcuts editor in VS Code (`Ctrl+K Ctrl+S` or go to **File → Preferences → Keyboard Shortcuts**).
+2. Search for `latex-workshop.citation` (or "LaTeX Workshop: Open Citation Browser").
+3. Double-click the command, press `Alt+I`, and hit **Enter**.
+4. Now you can quickly open the citation browser with `Alt+I` and insert citations without leaving your keyboard!
+   
+This is a quick way to insert citations, but it is not connected to your Zotero Library, so you have to make sure that your `.bib` file is up to date with your Zotero library (which should be the case if you set up auto-export correctly).
+Also this methods doesn't automatically add the `\cite{}` command, it just inserts the citation key, so you have to make sure to add the `\cite{}` command around the key yourself.
+
+#### The Zotero LaTeX Extension Citation Browser
+With the Zotero LaTeX VS Code extension or LaTeX Utilities extension installed, you can **search your Zotero library directly** and insert a citation key. By default, the extension might use `Alt+Z`, but this conflicts with VS Code's word wrap toggle! 
+
+**To fix this and change the Zotero shortcut to f.e. `Alt+I`**:
+1. Open the Keyboard Shortcuts editor in VS Code (`Ctrl+K Ctrl+S` or go to **File → Preferences → Keyboard Shortcuts**).
+2. Search for `zotero.cite`.
+3. Double-click the command, press `Alt+I`, and hit **Enter**.
 
 
 ### 5. Building Your Document
@@ -200,18 +263,70 @@ When you are ready to compile your document and generate the PDF, you can do thi
 3. PDF opens automatically in VS Code
 
 #### Using the Command Line
+you can also compile your document manually using the command line with `latexmk`, if you prefer this.
 
 ```bash
-# Full build with bibliography
-latexmk -pdf -interaction=nonstopmode -outdir=build main.tex
+# Full build with bibliography and SyncTeX
+latexmk -synctex=1 -pdf -interaction=nonstopmode -outdir=build main.tex
 
 # Clean build artifacts
 latexmk -C -outdir=build
 
 # Continuous preview (recompiles on save)
-latexmk -pdf -pvc -interaction=nonstopmode -outdir=build main.tex
+latexmk -synctex=1 -pdf -pvc -interaction=nonstopmode -outdir=build main.tex
 ```
+---
 
+## Tips & Tricks
+
+**1. Word Wrap:**
+When writing long paragraphs of text in LaTeX, it's highly recommended to enable "Word Wrap" so your text doesn't go off the screen. 
+- **Shortcut:** Press `Alt+Z` to toggle word wrap exactly where you are.
+- **Settings:** You can also enable it permanently by going to Settings (`Ctrl+,`), searching for "Word Wrap", and setting `Editor: Word Wrap` to `on`.
+
+
+**2. Auto-save:**
+When you enable **file → autosave**, the PDF will automatically recompile and update in the viewer amd you don't have to worry about saving your file every time you make a change. 
+
+
+**3. SyncTeX (Jump between Code & PDF):**
+With LaTeX Workshop, you don't have to scroll around to find your place!
+- **Code $\rightarrow$ PDF:** Press `Ctrl+Alt+J` anywhere in your code to jump to the corresponding spot in the compiled PDF.
+- **PDF $\rightarrow$ Code:** Hold `Ctrl` (or `Cmd` on Mac) and click on any text in the VS Code PDF viewer to immediately jump to the source code line. For this to work, make sure all sections have the line `% !TeX root = ../main.tex` at the top, so LaTeX Workshop knows which file is the main document.
+
+
+**4. Word count**
+The LaTeX Workshop extension also provides a word count feature that displays the number of words in your document. You can see this word count in the status bar at the bottom of VS Code when you have a `.tex` file open. It counts only the actual text content and ignores LaTeX commands, so you get an accurate word count for your writing.
+If you want the word count of the whole document, you can see this by opening the main.tex file and looking at the status bar. 
+
+
+**5. LaTeX-Workshop panel**
+The LaTeX Workshop extension has a built-in panel that provides quick access to various handy features, you can find it on the left sidebar (the TeX icon) or open it with `Ctrl+Shift+P` and search for "LaTeX Workshop: Show LaTeX Workshop panel". Some useful features in this panel include:
+- **Outline View**: Shows the structure of your document (sections, subsections, etc) and allows you to quickly navigate between them
+- **Citations View**: Search and insert citations from your bibliography, you can also check which references are not cited yet
+-  **Snippets View**: Browse and insert LaTeX snippets for common structures (figures, tables, math, etc.)
+-  **Build View**: Access build commands and view compilation logs
+-  **Math Symbols View**: Browse and insert math symbols easily
+-  ...
+
+Just explore the panel and see what features you find useful!
+
+
+**6. Clear Build Files To Fix Errors:**
+Sometimes, a LaTeX build fails because corrupted auxiliary files (`.aux`, `.bbl`, etc.) got left behind from a previous bad compile. 
+- Open the VS Code Command Palette (`Ctrl+Shift+P`) and run **`LaTeX Workshop: Clean up auxiliary files`**, then build your document again. (The included `latexmk` script already clears most things, but this is a good failsafe).
+
+
+**7. Hover Previews for Equations & Citations:**
+If you hover your mouse over math blocks (like `\begin{equation}`) or references (`\cite{}`, `\ref{}`), LaTeX Workshop will display a pop-up preview of the rendered math equation, the bibliography entry, or the remote figure you are referencing!
+
+
+**8. Multi-Cursor:**
+In VS Code, you can:
+- Hold `Alt` and click on multiple places to type in them simultaneously.
+- Press `Ctrl+Alt+Up/Down` arrow keys to place cursors across multiple column rows at once (e.g., adding `&` dividers rapidly).
+
+---
 
 ## VUB Styling
 
@@ -236,6 +351,7 @@ The template uses **TeX Gyre Adventor** (similar to Avenir), the official VUB fo
 
 The VUB logo and orange triangle are automatically added to the title page via `\maketitle`.
 
+---
 
 ## LaTeX Quick Reference
 This is a quick reference for common LaTeX commands and environments that you can use in your document. For more detailed information, check out the [Additional Resources](#additional-resources) section below.
@@ -317,7 +433,7 @@ The equation $E = mc^2$ is famous.
 \citeA{key}                  % Author (Year)
 \citeyear{key}              % Year only
 ```
-
+---
 
 ## Troubleshooting
 
@@ -338,6 +454,7 @@ The equation $E = mc^2$ is famous.
 **Problem**: Fonts look wrong
 - **Solution**: Install TeX Gyre Adventor fonts or they'll fall back to Computer Modern
 
+---
 
 ## Additional Resources
 
@@ -351,7 +468,7 @@ The equation $E = mc^2$ is famous.
 - [JabRef](https://www.jabref.org/) - Reference management software
 - [Zotero](https://www.zotero.org/) - Bibliography manager (see Zotero guide above)
 
-
+---
 
 ## License
 
