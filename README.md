@@ -193,14 +193,14 @@ Add references to your Zotero library using any of these methods:
 Now, every time you add or edit a reference in Zotero, it will automatically update `bib/main.bib`. No manual copying needed.
 
 ### 4. Cite in Your Document
-There are multiple ways to cite your references in your LaTeX document, you can use the standard `\cite{}` command, or you can use the commands provided by the LaTeX Workshop extension, the utilities extension or the zotero extension for easier citation management.
+There are multiple ways to cite your references in your LaTeX document, you can use the `\parencite{}` or `\textcite{}` commands from `biblatex`, or you can use the commands provided by the LaTeX Workshop extension, the utilities extension or the Zotero extension for easier citation management.
 
-When you want to cite a reference, you have to use the citation key that corresponds to the reference you want to cite. If you are using Zotero with Better BibTeX, each reference will have a unique citation key that is automatically generated based on the author and year (or whatever pattern you set in Better BibTeX settings). You can find this citation key in the "Citation Key" column of your Zotero library. For example, if you have a reference with the citation key `desmet2020`, you can cite it in your LaTeX document like this:
+When you want to cite a reference, you have to use the citation key that corresponds to the reference you want to cite. If you are using Zotero with Better BibTeX, each reference will have a unique citation key that is automatically generated based on the author and year (or whatever pattern you set in Better BibTeX settings). You can find this citation key in the "Citation Key" column of your Zotero library. For example, if you have a reference with the citation key `desmet2020`, you can cite it parenthetically in your LaTeX document like this:
 
 ```latex
-As demonstrated by \cite{desmet2020}...
+As demonstrated by previous research \parencite{desmet2020}...
 ```
-If you're typing in VS code, the LaTeX Workshop extension provides auto-completion for citation keys. When you type `\cite{`, a dropdown will appear showing all available citation keys from your `.bib` file, so you can easily select the one you want without having to remember the exact key. But you can also use a citation browser to search and insert a citation, their are 2 browsers you can use:
+If you're typing in VS code, the LaTeX Workshop extension provides auto-completion for citation keys. When you type `\parencite{`, a dropdown will appear showing all available citation keys from your `.bib` file, so you can easily select the one you want without having to remember the exact key. But you can also use a citation browser to search and insert a citation, their are 2 browsers you can use:
 
 #### The lateX Workshop Citation Browser
 This is the citation browser thats included in the latex workshop extension, you can open it by pressing `Ctrl+Shift+P` and searching for "LaTeX Workshop: Open Citation Browser". This will open a search bar where you can type the name of the author, title, or any keyword from your references, and it will show you a list of matching citation keys from your `.bib` file. You can then select the one you want to  into your document. You can also bind a shortcut to this command for faster access, for example `Alt+I`:
@@ -210,7 +210,7 @@ This is the citation browser thats included in the latex workshop extension, you
 4. Now you can quickly open the citation browser with `Alt+I` and insert citations without leaving your keyboard!
    
 This is a quick way to insert citations, but it is not connected to your Zotero Library, so you have to make sure that your `.bib` file is up to date with your Zotero library (which should be the case if you set up auto-export correctly).
-Also this methods doesn't automatically add the `\cite{}` command, it just inserts the citation key, so you have to make sure to add the `\cite{}` command around the key yourself.
+Also this method doesn't automatically add the `\parencite{}` or `\textcite{}` command, it just inserts the citation key, so you have to make sure to add the citation command around the key yourself.
 
 #### The Zotero LaTeX Extension Citation Browser
 With the Zotero LaTeX VS Code extension or LaTeX Utilities extension installed, you can **search your Zotero library directly** and insert a citation key. By default, the extension might use `Alt+Z`, but this conflicts with VS Code's word wrap toggle! 
@@ -395,9 +395,12 @@ The equation $E = mc^2$ is famous.
 
 ### Citations
 
+Using APA 7 (via `biblatex-apa`), you can cite as follows:
+
 ```latex
-\cite{key}                   % (Author, Year)
-\citeA{key}                  % Author (Year)
+\parencite{key}              % (Author, Year)
+\textcite{key}               % Author (Year)
+\cite{key}                   % Author, Year (no parentheses)
 \citeyear{key}              % Year only
 ```
 ---

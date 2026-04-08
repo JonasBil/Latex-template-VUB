@@ -12,7 +12,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{fancyhdr}
-\usepackage{apacite} % APA style citations
+\usepackage[style=apa, backend=biber]{biblatex} % APA 7th Edition style citations
+\addbibresource{bib/main.bib}
 \usepackage{xcolor}
 \usepackage{geometry}
 \geometry{includefoot,bottom=15mm}
@@ -49,8 +50,7 @@
     \input{sections/05-conclusion}
 
     \newpage
-    \bibliographystyle{apacite}
-    \bibliography{bib/main}
+    \printbibliography
 
     % Appendix (after references)
     \newpage

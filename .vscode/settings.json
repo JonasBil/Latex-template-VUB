@@ -40,6 +40,6 @@
     
     
     // Zotero LaTeX extension: Set the default citation command to \cite 
-    "zotero.latexCommand": "cite",
-    "latex-utilities.zotero.latexCommand": "cite"
+    "zotero.latexCommand": "parencite",
+    "latex-utilities.zotero.latexCommand": "parencite"
 }
